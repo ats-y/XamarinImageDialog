@@ -5,7 +5,8 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    x:Class="Dialog.MainPage">
+    x:Class="Dialog.Views.MainPage"
+    Title="Trial Dialog">
     <StackLayout>
         <!-- Place new controls here -->
         <Label
