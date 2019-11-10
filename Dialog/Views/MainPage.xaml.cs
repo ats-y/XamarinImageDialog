@@ -18,17 +18,5 @@ namespace Dialog.Views
         {
             InitializeComponent();
         }
-
-        public async void OnShowDialogButtonClicked(object sender, EventArgs arg)
-        {
-            Debug.WriteLine("OnShowDialogButtonClicked");
-
-            //var result = await  DependencyService.Get<ICustomDialogService>().Show(
-            //      "Prain text", "Please enter text.", "OK", "Cancel");
-
-            var result = await DependencyService.Get<ICustomDialogService>().Show3();
-
-            Debug.WriteLine(result);
-        }
     }
 }

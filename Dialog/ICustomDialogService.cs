@@ -8,9 +8,9 @@ namespace Dialog
     /// </summary>
     public interface ICustomDialogService
     {
-        Task<CustomAlertResult> Show(string title, string message, string accepte, string cancel);
+        Task<CustomAlertResult> Show(string title, string message, string accepte);
 
-        Task<CustomAlertResult> Show3();
+        Task<CustomAlertResult> ShowImageContent(string title, string message, string accepte, string cancel = null);
     }
 
     public class CustomAlertResult

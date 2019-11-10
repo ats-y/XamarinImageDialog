@@ -6,10 +6,12 @@ using UIKit;
 
 namespace Dialog.iOS
 {
-    public class CustomAlertSubtitleViewController : UIViewController
+    /// <summary>
+    /// エラー画像を表示するビュー
+    /// </summary>
+    public class ErrorImageViewController : UIViewController
     {
-        
-        public CustomAlertSubtitleViewController()
+        public ErrorImageViewController()
         {
         }
 
@@ -17,19 +19,14 @@ namespace Dialog.iOS
         {
             base.ViewDidLoad();
 
+            // エラー画像を表示する。
             UIImage image = UIImage.FromFile("ErrorImage.png");
             image.ImageWithRenderingMode(UIImageRenderingMode.Automatic);
-
             UIImageView imageView = new UIImageView
             {
                 Image = image,
                 Frame = new CGRect(90, 0, 90, 90),
             };
-
-
-            View.ContentMode = UIViewContentMode.ScaleToFill;
-
-            //View.BackgroundColor = UIColor.Blue;
             View.AddSubview(imageView);
         }
     }
