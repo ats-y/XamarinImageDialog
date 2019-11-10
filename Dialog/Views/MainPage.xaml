@@ -11,7 +11,10 @@
         <!-- Place new controls here -->
         <Label
             Text="Welcome to Xamarin.Forms!"
-            HorizontalOptions="Center"
-            VerticalOptions="CenterAndExpand" />
+            HorizontalOptions="Center"/>
+        <Button
+            x:Name="ShowDialogButton"
+            Clicked="OnShowDialogButtonClicked"
+            Text="ダイアログ"/>
     </StackLayout>
 </ContentPage>
