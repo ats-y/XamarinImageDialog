@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Reactive.Bindings;
@@ -11,15 +12,31 @@ namespace Dialog.ViewModels
         /// <summary>
         /// 画像付きダイアログ表示コマンド
         /// </summary>
-        public ReactiveCommand ShowDialogCommand { get; set; }
+        public AsyncReactiveCommand ShowDialogCommand { get; set; }
 
         public MainPageViewModel()
         {
-            ShowDialogCommand = new ReactiveCommand();
+            ShowDialogCommand = new AsyncReactiveCommand();
             ShowDialogCommand.Subscribe(async _ =>
               {
                   Debug.WriteLine("ShowDialogCommand");
-                  var result = await DependencyService.Get<ICustomDialogService>().ShowImageContent("照合エラー", "この行為は禁止です。", "はい", "やめる");
+
+                  string msg = "あいうえおかきくけこさしすせそたちつてと" + Environment.NewLine
+                  + "2" + Environment.NewLine
+                  + "3" + Environment.NewLine
+                  + "4" + Environment.NewLine
+                  + "5" + Environment.NewLine
+                  + "6" + Environment.NewLine
+                  + "7" + Environment.NewLine
+                  + "8" + Environment.NewLine
+                  + "9" + Environment.NewLine
+                  + "10" + Environment.NewLine;
+
+                  var result = await DependencyService.Get<ICustomDialogService>()
+                    .Show("照合エラー", msg, EImageKind.Error,
+                            new List<string>() { "受諾1", "受諾2", "受諾3" },
+                            new List<string>() { "破棄1", "破棄2", "破棄3" },
+                            "きゃんせる");
                   Debug.WriteLine($"ShowDialogCommand dialog result = {result.PressedButtonTitle}");
               });
         }

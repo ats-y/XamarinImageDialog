@@ -65,8 +65,8 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomDialog.cs" />
-    <Compile Include="ErrorImageViewController.cs" />
+    <Compile Include="CustomDialog\CustomDialog.cs" />
+    <Compile Include="CustomDialog\ErrorImageViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -136,6 +136,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ErrorImage.png" />
+    <BundleResource Include="Resources\IconWarning.png" />
+    <BundleResource Include="Resources\IconQuestion.png" />
+    <BundleResource Include="Resources\IconError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomDialog\" />
   </ItemGroup>
 </Project>
