@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Dialog
+namespace Dialog.Utility
 {
     /// <summary>
     /// カスタムダイアログ。

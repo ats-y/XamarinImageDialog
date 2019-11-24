@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using CoreGraphics;
+using Dialog.Utility;
 using ObjCRuntime;
 using UIKit;
 

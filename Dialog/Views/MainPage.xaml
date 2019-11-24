@@ -8,9 +8,18 @@
     x:Class="Dialog.Views.MainPage"
     Title="Trial Dialog">
     <StackLayout>
+
         <Button
             x:Name="ShowDialogButton"
-            Command="{Binding ShowDialogCommand}"
-            Text="画像付きダイアログ"/>
+            Command="{Binding ShowCostomDialogCommand}"
+            Text="カスタムダイアログ"/>
+
+        <Button
+            Text="照合ダイアログ（全部）"
+            Command="{Binding ShowCollationCommand}"/>
+
+        <Button
+            Text="照合ダイアログ（エラーなし）"
+            Command="{Binding ShowNonErrorCommand}"/>
     </StackLayout>
 </ContentPage>
