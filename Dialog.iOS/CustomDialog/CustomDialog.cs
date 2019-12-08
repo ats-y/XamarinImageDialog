@@ -40,8 +40,11 @@ namespace Dialog.iOS.CustomDialog
             UIAlertController alert = UIAlertController.Create(title, message, UIAlertControllerStyle.Alert);
 
             // アラートダイアログのメッセージとボタンの間に画像を表示する。
-            AlertImageViewController view = new AlertImageViewController(imageKind);
-            alert.SetValueForKey(view, new NSString("contentViewController"));
+            if (imageKind != EImageKind.Nothing)
+            {
+                AlertImageViewController view = new AlertImageViewController(imageKind);
+                alert.SetValueForKey(view, new NSString("contentViewController"));
+            }
 
             // ボタンをタップしたら結果を返すタスクを生成する。
             var result = new TaskCompletionSource<CustomAlertResult>();

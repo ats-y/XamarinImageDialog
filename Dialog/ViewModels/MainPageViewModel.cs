@@ -31,12 +31,15 @@ namespace Dialog.ViewModels
         /// </summary>
         IPageDialogService _pageDialogService;
 
+        ICustomDialogService _customDialogService;
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="pageDialogServece">Prismのダイアログサービス</param>
-        public MainPageViewModel(IPageDialogService pageDialogServece)
+        public MainPageViewModel(IPageDialogService pageDialogServece, IDependencyService dependencyService)
         {
+            _customDialogService = dependencyService.Get<ICustomDialogService>();
             _pageDialogService = pageDialogServece;
 
             // カスタムダイアログ表示コマンドの購読。
@@ -110,7 +113,8 @@ namespace Dialog.ViewModels
             // 中断された場合はその旨をダイアログで表示する。
             if (!result)
             {
-                await _pageDialogService.DisplayAlertAsync(string.Empty, "中断されました", "ok");
+                //await _pageDialogService.DisplayAlertAsync(string.Empty, "中断されました", "ok");
+                await _customDialogService.Show("たいとる", "中断されました", EImageKind.Nothing, new List<string> { "OK" });
             }
         }
     }
